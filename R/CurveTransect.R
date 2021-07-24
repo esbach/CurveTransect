@@ -12,10 +12,6 @@ new_point <- function(p0, p1, di) {
 #' @param spacing Numeric distance (in meters) between each point on the transect
 #' @return Data-frame with spatial coordinates for each specified point on the transect
 
-#' @importFrom 
-#' @export
-#' @examples
-
 observerXY <- function(transectXY, spacing) {
   result = transectXY[1,,drop=FALSE] 
   equidistantPoints = transectXY[1,,drop=FALSE] 
@@ -46,14 +42,10 @@ observerXY <- function(transectXY, spacing) {
 #' @param buffer Number of meters around the observer's location used to make bearing on the transect. 
 #' @return Data-frame with the anima'ls spatial location as xy coordinates, plus the original 'meter', 'distance,' and 'angle.' 
 
-#' @importFrom 
-#' @export
-#' @examples
-
 detectionXY <- function(transectXY, detections, buffer){
   # transectXY: dataframe of transect coordinates
   # detections: columns with "meter", "distance", and "angle" 
-  # buffer: ± meters from observer's location to create bearing
+  # buffer: meters from observer's location to create bearing
   # location used to create a bearing line
   detections$x.obs <- detections$y.obs <- rep(0, length(detections$meter))
   for(ii in 1:length(detections$meter)){
@@ -66,8 +58,8 @@ detectionXY <- function(transectXY, detections, buffer){
 
 animalXY <- function(meter, distance, angle, transectXY, buffer){
   # takes "meter", "distance", and "angle" from detectionXY function
-  # transectXY: dataframe of transect coordinates
-  # buffer = ± meters from observer's location to create bearing
+  # transectXY is a dataframe of transect coordinates
+  # buffer is the meters from observer's location to create bearing
   local.data <- transectXY[(transectXY[,1] < meter + buffer) & (transectXY[,1] > meter - buffer ),]
    if(nrow(local.data) > 1){
     if(sd(local.data$x) < 1e-4){
