@@ -46,7 +46,7 @@ observerXY <- function(transectXY, spacing) {
 #' @param transectXY Two column data-matrix containing the transect's spatial coordinates
 #' @param detections Data frame with colums 'meter,' 'distance,' and 'angle.'
 #' @param buffer Number of meters around the observer's location used to make bearing on the transect. 
-#' @return Data-frame with the anima'ls spatial location as xy coordinates, plus the original 'meter', 'distance,' and 'angle.' 
+#' @return Data-frame with the animal's spatial location as xy coordinates, plus the original 'meter', 'distance,' and 'angle.' 
 #' @example 
 #' detectionXY(transect=transectXY, detections=ds, buffer=5) 
 #' @export
