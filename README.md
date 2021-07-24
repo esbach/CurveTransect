@@ -23,7 +23,7 @@ library(smoothr) #curve smoothing
 transect = smooth(transect, method="chaikin") # smooth line
 ```
 
-# set crs for transect
+### set crs for transect
 the transect needs a coordinate reference system
 ```
 projected = CRS("+proj=utm +zone=17 +ellps=intl +units=m +datum=WGS84 +no_defs")
