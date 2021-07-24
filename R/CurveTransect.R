@@ -1,4 +1,4 @@
-# -------------- EQUIDISTANT LOCATIONS ON TRANSECT -----------------------#
+# ---------------------------------------#
 
 norm_vec <- function(x) sqrt(sum(x^2))
 new_point <- function(p0, p1, di) { 
@@ -8,10 +8,14 @@ new_point <- function(p0, p1, di) {
   return (p0 + u * di)
 }
 
+#' Equidistant Points on Transect
+#' 
 #' @param transectXY Two column data-matrix containing the transect's spatial coordinates
 #' @param spacing Numeric distance (in meters) between each point on the transect
 #' @return Data-frame with spatial coordinates for each specified point on the transect
-
+#' @example
+#' observerXY(transect=transectXY, spacing=1)
+#' @export
 observerXY <- function(transectXY, spacing) {
   result = transectXY[1,,drop=FALSE] 
   equidistantPoints = transectXY[1,,drop=FALSE] 
@@ -35,17 +39,18 @@ observerXY <- function(transectXY, spacing) {
   return(data.frame(x.obs=equidistantPoints[,1], y.obs=equidistantPoints[,2]))
 }
 
-# ------------------------ ANIMAL LOCATIONS ------------------------------#
+# ---------------------------------------#
 
+#' Location of Detected Objects
+#' 
 #' @param transectXY Two column data-matrix containing the transect's spatial coordinates
 #' @param detections Data frame with colums 'meter,' 'distance,' and 'angle.'
 #' @param buffer Number of meters around the observer's location used to make bearing on the transect. 
 #' @return Data-frame with the anima'ls spatial location as xy coordinates, plus the original 'meter', 'distance,' and 'angle.' 
-
+#' @example 
+#' detectionXY(transect=transectXY, detections=ds, buffer=5) 
+#' @export
 detectionXY <- function(transectXY, detections, buffer){
-  # transectXY: dataframe of transect coordinates
-  # detections: columns with "meter", "distance", and "angle" 
-  # buffer: meters from observer's location to create bearing
   # location used to create a bearing line
   detections$x.obs <- detections$y.obs <- rep(0, length(detections$meter))
   for(ii in 1:length(detections$meter)){
