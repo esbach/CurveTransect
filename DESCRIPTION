@@ -1,0 +1,4 @@
+Package: CurveTransect
+Type: Package
+Title: Distance Sampling on Curving Transects
+Version: 0.0.1.0
