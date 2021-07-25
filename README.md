@@ -1,13 +1,26 @@
-# CurveTransect
+# `CurveTransect`
 a package to support distance sampling on a curving transect
 
-### Step 1: Install and/or Load the CurveTransect Package
+## Getting `CurveTransect`
+
+The easiest way to ensure you have the latest version of `CurveTransect`, is to install the `devtools` package:
+
+      install.packages("devtools")
+
+then install `CurveTransect` from github:
+
+      library(devtools)
+      install_github("esbach/CurveTransect")
+      
+## How `CurveTransect` Works
+
+### 1: Install and/or Load the CurveTransect Package
 ```
 library(devtools)
 install_github("esbach/CurveTransect")
 ```
 
-### Step 2: Build Sample Transect
+### 2: Build Sample Transect
 
 - here we create a curving transect and smooth the edges
 ```
@@ -28,7 +41,7 @@ projected = CRS("+proj=utm +zone=17 +ellps=intl +units=m +datum=WGS84 +no_defs")
 proj4string(transect) = projected
 ```
 
-### Step 2: Crete Equally Distanced Points on Transect
+### 2: Crete Equally Distanced Points on Transect
 
 - this calculates the length of the transect in meters
 ```
@@ -50,7 +63,7 @@ transectXY = data.matrix(transect@lines[[1]]@Lines[[1]]@coords)
 transectXY = observerXY(transect=transectXY, spacing=1)
 ```
 
-### Step 3: Create some Distance Sampling Data
+### 3: Create some Distance Sampling Data
 - data collected when conducting a field survey
 - distance equals the number of meters between the observer and the object (e.g., animal) of interest
 - angle is the degrees (0-360) between the observer's bearing and the object
@@ -59,7 +72,7 @@ transectXY = observerXY(transect=transectXY, spacing=1)
 ds = data.frame("distance"=100, "angle"=90, "meter"=540)
 ```
 
-### Step 4: Find Animal Locations
+### 4: Find Animal Locations
 
 - to find the animal's spatial location, we need to convert our spatial coordinates
 - we do this because dependency functions only work with lat/long coordinates
