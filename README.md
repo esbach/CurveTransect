@@ -1,5 +1,14 @@
 # `CurveTransect`
-a package to support distance sampling on a curving transect
+`CurveTransect` is a simple way to facilitate distance sampling on a curving transect. 
+
+Randomly placed, straight line transects can pose many practical challenges. In dense tropical forests, for example, cutting straight-line transects can be time-consuming and expensive, particularly when large areas need to be surveyed. Straight line transects may also cross challenging environments, including rivers, swamps, steep hills, dense vegetation, and more. To overcome these challenges, we suggest a new method for distance sampling using curving transects within dense forests. Field staff can use straight line transects randomly generated through geographic information systems (GIS) as a guide, making adjustments when clearing actual paths through dense forests to facilitate safety and sidestep challenging areas. This method maintains overall randomness and simultaneously improves working conditions by allowing staff to walk adjacent to, rather than directly through, dangerous environments. Such transects not only support a safe working environment but can improve detectability.
+
+We developed a method to support accurate distance sampling on curving transects. Upon observing an object in the field, staff first record their position to the exact meter on the trail. The monitor then orients themselves along the general bearing of the transect, considering approximately five meters behind and in front of their current position (this distance can be modified). With this bearing, the monitor then records the distance from their current position to the object, as well as the angle from their bearing to the object with the aid of a 360 degree protractor.
+
+After these data have been transferred to an electronic format, they can be imported into R, where a the function found here measures the nearest distance between the object and the curving transect. The function requires various inputs: (1) a GIS file for each transect, (2) the meter location of the observer when they encountered an object, (3) the angle between the object and the observer’s bearing, and (4) the distance between the animal and the observer. With the GIS file of the transect, the function first measures the length of the transect, then places a point at each meter, recording the coordinates for each. Then, for each observation, it locates the meter on the transect where the observation was made and fits a line between that point and five meters before and after. This fitted line is the bearing, from which the angle and distance provided can be used to create geographic coordinates for each detected object’s spatial location. In the final step, the function measures the exact distance between each animal’s location and the nearest point on the transect. These data are then compiled into a single data-frame that can be directly used for analysis (i.e., with the package [Distance] (https://github.com/cran/Distance/blob/master/README.md)
+
+
+
 
 ## Getting `CurveTransect`
 
