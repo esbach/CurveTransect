@@ -48,9 +48,9 @@ observerXY <- function(transectXY, spacing) {
 #' @param buffer Number of meters around the observer's location used to make bearing on the transect. 
 #' @return Data-frame with the animal's spatial location as xy coordinates, plus the original 'meter', 'distance,' and 'angle.' 
 #' @example 
-#' detectionXY(transect=transectXY, detections=ds, buffer=5) 
+#' objectXY(transect=transectXY, detections=ds, buffer=5) 
 #' @export
-detectionXY <- function(transectXY, detections, buffer){
+objectXY <- function(transectXY, detections, buffer){
   # location used to create a bearing line
   detections$x.obs <- detections$y.obs <- rep(0, length(detections$meter))
   for(ii in 1:length(detections$meter)){
@@ -62,7 +62,7 @@ detectionXY <- function(transectXY, detections, buffer){
 }
 
 animalXY <- function(meter, distance, angle, transectXY, buffer){
-  # takes "meter", "distance", and "angle" from detectionXY function
+  # takes "meter", "distance", and "angle" from objectXY function
   # transectXY is a dataframe of transect coordinates
   # buffer is the meters from observer's location to create bearing
   local.data <- transectXY[(transectXY[,1] < meter + buffer) & (transectXY[,1] > meter - buffer ),]

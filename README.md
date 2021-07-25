@@ -100,13 +100,13 @@ transectXY = transectXY[order(transectXY$meter), ] # reorder by meter
 rownames(transectXY) = transectXY[,1]
 ```
 
-here we use the function "detectionXY" so spatially locate each animal. this function relies on the following inputs:
+here we use the function "objectXY" so spatially locate each animal. this function relies on the following inputs:
 - transectXY: a two column data-matrix containing the transect's spatial coordinates
 - detections: a data-frame with colums 'meter,' 'distance,' and 'angle'
 - buffer: the number of meters betore and after the observer's location used to make bearing on the transect
 ```
 library(geosphere)
-animals = detectionXY(transect=transectXY, detections=ds, buffer=5) 
+animals = objectXY(transect=transectXY, detections=ds, buffer=5) 
 ```
 
 turn transectXY into *sp* Spatial Points Data Frame
