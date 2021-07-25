@@ -25,7 +25,7 @@ In addition to these data, `CurveTransect` requires a GIS file for each transect
 
 From that GIS file, the function ***observerXY*** measures the length of the transect and places points at every meter, recording the coordinates for each. 
 
-Then, for each observation, the function ***detectionXY*** locates the meter on the transect where the observation was made and fits a line between that point and five meters before and after (*b*). This fitted line is the bearing, from which the angle (*θ*) and distance (*r*) provided can be used to create geographic coordinates for each detected object’s spatial location. In the final step, the function measures the exact distance between each animal’s location and the nearest point on the transect (*x*). These data are then compiled into a single data-frame that can be directly used for analysis.
+Then, for each observation, the function ***objectXY*** locates the meter on the transect where the observation was made and fits a line between that point and five meters before and after (*b*). This fitted line is the bearing, from which the angle (*θ*) and distance (*r*) provided can be used to create geographic coordinates for each detected object’s spatial location. In the final step, the function measures the exact distance between each animal’s location and the nearest point on the transect (*x*). These data are then compiled into a single data-frame that can be directly used for analysis.
 
 ## A Sample Analysis
 
