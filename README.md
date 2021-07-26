@@ -1,7 +1,7 @@
 # `CurveTransect`
 `CurveTransect` is a simple way to facilitate distance sampling on a curving transect. 
 
-Randomly placed, straight line transects can pose many practical challenges. In dense tropical forests, for example, cutting straight-line transects can be time-consuming and expensive, particularly when large areas need to be surveyed. Straight line transects may also cross challenging environments, including rivers, swamps, steep hills, dense vegetation, and more. To overcome these challenges, we present a new method for distance sampling using curving transects within dense forests. This method utilizes standard data collected while conducting a distance sampling analysis (i.e., observer's location on the transect, the distance between the observer and the object, and the angle between the observer and object). This data, along with spatial data for each transect, allows our function to spatially located each object of interest and measure the shortest distance between that object and the transect. The resulting data can be used directly in distance sampling analyses using a package like [Distance](https://github.com/cran/Distance/blob/master/README.md).
+Randomly placed, straight line transects can pose many practical challenges. In dense tropical forests, for example, cutting straight-line transects can be time-consuming and expensive, particularly when large areas need to be surveyed. Straight line transects may also cross challenging environments, including rivers, swamps, steep hills, dense vegetation, and more. To overcome these challenges, we present a new method for distance sampling using curving transects within dense forests. This method utilizes standard data collected while conducting a distance sampling analysis (i.e., observer's location on the transect, the distance between the observer and the object, and the angle between the observer and object). This data, along with spatial data for each transect, allows our function to spatially located each object of interest and measure the shortest distance between that object and the transect. The resulting data can be used directly in distance sampling analyses using a package like [Distance](https://github.com/cran/Distance).
 
 ## Getting `CurveTransect`
 
@@ -59,7 +59,7 @@ the functions requires a data-frame with two columns containing the x and y coor
 transectXY = data.matrix(transect@lines[[1]]@Lines[[1]]@coords)
 ```
 
-use observerXY function to place spatial points at every meter on transect
+use ***observerXY*** function to place spatial points at every meter on transect
 this function requires two inputs: 
 - transectXY is a data-frame with the transects x and y coordinates
 - spacing is the spacing between each point placed on the transect in meters (e.g., a point at every meter)
@@ -106,7 +106,7 @@ transectXY = transectXY[order(transectXY$meter), ] # reorder by meter
 rownames(transectXY) = transectXY[,1]
 ```
 
-here we use the function "objectXY" so spatially locate each animal. this function relies on the following inputs:
+here we use the function ***objectXY*** so spatially locate each animal. this function relies on the following inputs:
 - transectXY: a two column data-matrix containing the transect's spatial coordinates
 - detections: a data-frame with colums 'meter,' 'distance,' and 'angle'
 - buffer: the number of meters betore and after the observer's location used to make bearing on the transect
