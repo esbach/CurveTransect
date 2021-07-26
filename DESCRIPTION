@@ -15,3 +15,4 @@ RoxygenNote: 7.1.1
 Imports: 
     geosphere
 URL: https://github.com/esbach/CurveTransect
+Encoding: UTF-8
