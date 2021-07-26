@@ -2,4 +2,16 @@ Package: CurveTransect
 Type: Package
 Title: Distance Sampling on Curving Transects
 Version: 0.0.1.0
+Authors@R: 
+    person(given = "Michael",
+           family = "Esbach",
+           role = c("aut", "cre"),
+           email = "michael.s.esbach@gmail.com")
+    person(given = "Rohit",
+           family = "Patra",
+           role = c("aut", "cre"),
+           email = "rkumarpatra@gmail.com")
 RoxygenNote: 7.1.1
+Imports: 
+    geosphere
+URL: https://github.com/esbach/CurveTransect
