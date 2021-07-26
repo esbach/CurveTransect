@@ -11,7 +11,7 @@ new_point <- function(p0, p1, di) {
 #' Equidistant Points on Transect
 #' 
 #' @param transectXY Two column data-matrix containing the transect's spatial coordinates
-#' @param spacing Numeric distance (in meters) between each point on the transect
+#' @param spacing Numeric spacing (in meters) between each point on the transect
 #' @return Data-frame with spatial coordinates for each specified point on the transect
 #' @example
 #' observerXY(transect=transectXY, spacing=1)
