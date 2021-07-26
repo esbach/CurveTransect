@@ -92,6 +92,7 @@ first = SpatialPoints(transectXY, proj4string=latlong)
 plot(transect)
 points(first[1,], col="red", pch=20)
 ```
+<img src="https://github.com/esbach/CurveTransect/blob/main/Figures/Start.png" width="500" />
 
 convert to data frame
 ```
@@ -129,6 +130,7 @@ proj4string(meter) = latlong
 - here we plot the transect, the meter where the observer is located, and the animal's spatial location
 ```
 plot(transect)
-plot(meter[ds$meter,], col="red", add=T)
-plot(detections, pch=20, col="blue", add=T)
+plot(meter[ds$meter,], col="red", add=T) # observer location
+plot(detections, pch=20, col="blue", add=T) # object location
 ```
+<img src="https://github.com/esbach/CurveTransect/blob/main/Figures/Result.png" width="500" />
