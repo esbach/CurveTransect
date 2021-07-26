@@ -9,7 +9,7 @@ observerXY(transectXY, spacing)
 \arguments{
 \item{transectXY}{Two column data-matrix containing the transect's spatial coordinates}
 
-\item{spacing}{Numeric distance (in meters) between each point on the transect}
+\item{spacing}{Numeric spacing (in meters) between each point on the transect}
 }
 \value{
 Data-frame with spatial coordinates for each specified point on the transect
