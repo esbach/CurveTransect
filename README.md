@@ -65,6 +65,8 @@ use ***observerXY*** function to place spatial points at every meter on transect
 ```
 transectXY = observerXY(transect=transectXY, spacing=1)
 ```
+<img src="https://github.com/esbach/CurveTransect/blob/main/Figures/Points.png" width="500" />
+- note that the spacing in this image was bumped up to every 40 meters in order for visualization purposes
 
 ### 3: Create some Distance Sampling Data
 here we need to provide some sample data collected when conducting a field survey, including:
