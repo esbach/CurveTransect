@@ -59,8 +59,7 @@ the functions requires a data-frame with two columns containing the x and y coor
 transectXY = data.matrix(transect@lines[[1]]@Lines[[1]]@coords)
 ```
 
-use ***observerXY*** function to place spatial points at every meter on transect
-this function requires two inputs: 
+use ***observerXY*** function to place spatial points at every meter on transect. this function requires two inputs: 
 - transectXY is a data-frame with the transects x and y coordinates
 - spacing is the spacing between each point placed on the transect in meters (e.g., a point at every meter)
 ```
@@ -76,7 +75,7 @@ here we need to provide some sample data collected when conducting a field surve
 ds = data.frame("distance"=100, "angle"=90, "meter"=540)
 ```
 
-### 4: Find the Spatial Location of Each Animal
+### 4: Find the Spatial Location of Each Object (e.g., an animal)
 
 to find the animal's spatial location, we need to convert our spatial coordinates because dependency functions only work with lat/long coordinates
 ```
@@ -112,7 +111,6 @@ here we use the function ***objectXY*** so spatially locate each animal. this fu
 - detections: a data-frame with colums 'meter,' 'distance,' and 'angle'
 - buffer: the number of meters betore and after the observer's location used to make bearing on the transect
 ```
-library(geosphere)
 animals = objectXY(transect=transectXY, detections=ds, buffer=5) 
 ```
 
