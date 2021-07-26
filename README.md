@@ -59,8 +59,7 @@ the functions requires a data-frame with two columns containing the x and y coor
 transectXY = data.matrix(transect@lines[[1]]@Lines[[1]]@coords)
 ```
 
-use ***observerXY*** function to place spatial points at every meter on transect
-this function requires two inputs: 
+use ***observerXY*** function to place spatial points at every meter on transect. this function requires two inputs: 
 - transectXY is a data-frame with the transects x and y coordinates
 - spacing is the spacing between each point placed on the transect in meters (e.g., a point at every meter)
 ```
