@@ -112,7 +112,6 @@ here we use the function ***objectXY*** so spatially locate each animal. this fu
 - detections: a data-frame with colums 'meter,' 'distance,' and 'angle'
 - buffer: the number of meters betore and after the observer's location used to make bearing on the transect
 ```
-library(geosphere)
 animals = objectXY(transect=transectXY, detections=ds, buffer=5) 
 ```
 
