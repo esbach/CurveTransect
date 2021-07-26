@@ -75,7 +75,7 @@ here we need to provide some sample data collected when conducting a field surve
 ds = data.frame("distance"=100, "angle"=90, "meter"=540)
 ```
 
-### 4: Find the Spatial Location of Each Animal
+### 4: Find the Spatial Location of Each Object (e.g., an animal)
 
 to find the animal's spatial location, we need to convert our spatial coordinates because dependency functions only work with lat/long coordinates
 ```
