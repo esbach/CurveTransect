@@ -1,5 +1,5 @@
 # `CurveTransect`
-`CurveTransect` is a simple way to facilitate distance sampling on a curving transect. 
+`CurveTransect` facilitates distance sampling on a curving transect. 
 
 Randomly placed, straight line transects can pose many practical challenges. In dense tropical forests, for example, cutting straight-line transects can be time-consuming and expensive, particularly when large areas need to be surveyed. Straight line transects may also cross challenging environments, including rivers, swamps, steep hills, dense vegetation, and more. To overcome these challenges, we present a new method for distance sampling using curving transects within dense forests. This method utilizes standard data collected while conducting a distance sampling analysis (i.e., observer's location on the transect, the distance between the observer and the object, and the angle between the observer and object). This data, along with spatial data for each transect, allows our function to spatially located each object of interest and measure the shortest distance between that object and the transect. The resulting data can be used directly in distance sampling analyses using a package like [Distance](https://github.com/cran/Distance).
 
@@ -23,9 +23,9 @@ Upon observing an object in the field, staff first record their position to the 
 
 In addition to these data, `CurveTransect` requires a GIS file for each transect. 
 
-From that GIS file, the function ***observerXY*** measures the length of the transect and places points at every meter, recording the coordinates for each. 
+From that GIS file, the function `observerXY` measures the length of the transect and places points at every meter, recording the coordinates for each. 
 
-Then, for each observation, the function ***objectXY*** locates the meter on the transect where the observation was made and fits a line between that point and five meters before and after (*b*). This fitted line is the bearing, from which the angle (*θ*) and distance (*r*) provided can be used to create geographic coordinates for each detected object’s spatial location. In the final step, the function measures the exact distance between each animal’s location and the nearest point on the transect (*x*). These data are then compiled into a single data-frame that can be directly used for analysis.
+Then, for each observation, the function `objectXY` locates the meter on the transect where the observation was made and fits a line between that point and five meters before and after (*b*). This fitted line is the bearing, from which the angle (*θ*) and distance (*r*) provided can be used to create geographic coordinates for each detected object’s spatial location. In the final step, the function measures the exact distance between each animal’s location and the nearest point on the transect (*x*). These data are then compiled into a single data-frame that can be directly used for analysis.
 
 ## A Sample Analysis
 
@@ -59,8 +59,8 @@ the functions requires a data-frame with two columns containing the x and y coor
 transectXY = data.matrix(transect@lines[[1]]@Lines[[1]]@coords)
 ```
 
-use ***observerXY*** function to place spatial points at every meter on transect. this function requires two inputs: 
-- transectXY is a data-frame with the transects x and y coordinates
+use `observerXY` function to place spatial points at every meter on transect. this function requires two inputs: 
+- **transectXY** is a data-frame with the transects x and y coordinates
 - spacing is the spacing between each point placed on the transect in meters (e.g., a point at every meter)
 ```
 transectXY = observerXY(transect=transectXY, spacing=1)
@@ -70,9 +70,9 @@ transectXY = observerXY(transect=transectXY, spacing=1)
 
 ### 3: Create some Distance Sampling Data
 here we need to provide some sample data collected when conducting a field survey, including:
-- distance: number of meters between the observer and the object (e.g., animal) of interest
-- angle: degrees (0-360) between the observer's bearing and the object
-- meter: the observer's location on the transect
+- **distance**: number of meters between the observer and the object (e.g., animal) of interest
+- **angle**: degrees (0-360) between the observer's bearing and the object
+- **meter**: the observer's location on the transect
 ```
 ds = data.frame("distance"=100, "angle"=90, "meter"=540)
 ```
@@ -109,9 +109,9 @@ rownames(transectXY) = transectXY[,1]
 ```
 
 here we use the function ***objectXY*** so spatially locate each animal. this function relies on the following inputs:
-- transectXY: a two column data-matrix containing the transect's spatial coordinates
-- detections: a data-frame with colums 'meter,' 'distance,' and 'angle'
-- buffer: the number of meters betore and after the observer's location used to make bearing on the transect
+- **transectXY**: a two column data-matrix containing the transect's spatial coordinates
+- **detections**: a data-frame with colums 'meter,' 'distance,' and 'angle'
+- **buffer**: the number of meters betore and after the observer's location used to make bearing on the transect
 ```
 animals = objectXY(transect=transectXY, detections=ds, buffer=5) 
 ```
