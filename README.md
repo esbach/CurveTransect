@@ -60,8 +60,8 @@ transectXY = data.matrix(transect@lines[[1]]@Lines[[1]]@coords)
 ```
 
 use `observerXY` function to place spatial points at every meter on transect. this function requires two inputs: 
-- **transectXY** is a data-frame with the transects x and y coordinates
-- spacing is the spacing between each point placed on the transect in meters (e.g., a point at every meter)
+- `transectXY` is a data-frame with the transects x and y coordinates
+- `spacing` is the spacing between each point placed on the transect in meters (e.g., a point at every meter)
 ```
 transectXY = observerXY(transect=transectXY, spacing=1)
 ```
@@ -70,9 +70,9 @@ transectXY = observerXY(transect=transectXY, spacing=1)
 
 ### 3: Create some Distance Sampling Data
 here we need to provide some sample data collected when conducting a field survey, including:
-- **distance**: number of meters between the observer and the object (e.g., animal) of interest
-- **angle**: degrees (0-360) between the observer's bearing and the object
-- **meter**: the observer's location on the transect
+- `distance`: number of meters between the observer and the object (e.g., animal) of interest
+- `angle`: degrees (0-360) between the observer's bearing and the object
+- `meter`: the observer's location on the transect
 ```
 ds = data.frame("distance"=100, "angle"=90, "meter"=540)
 ```
@@ -108,15 +108,15 @@ transectXY = transectXY[order(transectXY$meter), ] # reorder by meter
 rownames(transectXY) = transectXY[,1]
 ```
 
-here we use the function ***objectXY*** so spatially locate each animal. this function relies on the following inputs:
-- **transectXY**: a two column data-matrix containing the transect's spatial coordinates
-- **detections**: a data-frame with colums 'meter,' 'distance,' and 'angle'
-- **buffer**: the number of meters betore and after the observer's location used to make bearing on the transect
+here we use the function `objectXY` so spatially locate each animal. this function relies on the following inputs:
+- `transectXY`: a two column data-matrix containing the transect's spatial coordinates
+- `detections`: a data-frame with colums 'meter,' 'distance,' and 'angle'
+- `buffer`: the number of meters betore and after the observer's location used to make bearing on the transect
 ```
 animals = objectXY(transect=transectXY, detections=ds, buffer=5) 
 ```
 
-turn transectXY into *sp* Spatial Points Data Frame
+turn `transectXY` into *sp* Spatial Points Data Frame
 this turns our data-frame with the distance, meter, angle, and xy coordinates of the object's location into a spatial object for plotting
 ```
 detections = animals
