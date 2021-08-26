@@ -8,7 +8,7 @@
 #' For help with distance sampling, there is a Google Group
 #' <https://groups.google.com/forum/#!forum/distance-sampling>.
 #'
-#' @name CurveTransect-package
+#' @name CurveTransect
 #' @import geosphere
 #' @docType package
 #' @author Michael Esbach <mesbach@@princeton.edu>
@@ -16,6 +16,7 @@
 #'
 #' Key References:
 #'
-#' Esbach M.S. and R.K. Patra In review. Distance Sampling from Curving Transects in Dense Forests.
+#' Esbach M.S. and R.K. Patra. In review. Distance Sampling from Curving Transects in Dense Forests.
 #'   Methods in Ecology and Evolution.
 NULL
+#> NULL
