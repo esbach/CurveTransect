@@ -18,3 +18,4 @@
 #'
 #' Esbach M.S. and R.K. Patra In review. Distance Sampling from Curving Transects in Dense Forests.
 #'   Methods in Ecology and Evolution.
+NULL
