@@ -3,3 +3,4 @@
 export(cca)
 export(objectXY)
 export(observerXY)
+import(geosphere)
