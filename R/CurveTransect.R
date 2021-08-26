@@ -16,7 +16,8 @@ new_point <- function(p0, p1, di) {
 #' @example
 #' observerXY(transect=transectXY, spacing=1)
 #' @export
-observerXY <- function(transectXY, spacing) {
+observerXY <- function(transect, spacing) {
+  transectXY = data.matrix(transect@lines[[1]]@Lines[[1]]@coords)
   result = transectXY[1,,drop=FALSE] 
   equidistantPoints = transectXY[1,,drop=FALSE] 
   transectXY = tail(transectXY, n = -1)
@@ -36,7 +37,24 @@ observerXY <- function(transectXY, spacing) {
       accDist = accDist + dist
     }
   }
-  return(data.frame(x.obs=equidistantPoints[,1], y.obs=equidistantPoints[,2]))
+  observerXY = data.frame(x.obs=equidistantPoints[,1], y.obs=equidistantPoints[,2])
+  return(observerXY)
+}
+
+# ---------------------------------------#
+
+#' Adjusted Transect Length for Curved Covered Area Calculation
+#' 
+#' @param transect GIS file of the transect of class SpatialLines
+#' @param trunc Truncation distance (meters)
+#' @return Length of the transect (meters) used by distance sampling packages to correctly calculate the covered area. 
+#' @example
+#' cca(transect=transect, trunc=100)
+#' @export
+cca <- function(transect, trunc) {
+  buffer = gBuffer(transect, width = trunc, capStyle = "FLAT")
+  area = gArea(buffer, byid=FALSE)
+  length = (area)/(2*trunc) / 1000 # meters
 }
 
 # ---------------------------------------#

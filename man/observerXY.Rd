@@ -4,12 +4,12 @@
 \alias{observerXY}
 \title{Equidistant Points on Transect}
 \usage{
-observerXY(transectXY, spacing)
+observerXY(transect, spacing)
 }
 \arguments{
-\item{transectXY}{Two column data-matrix containing the transect's spatial coordinates}
-
 \item{spacing}{Numeric spacing (in meters) between each point on the transect}
+
+\item{transectXY}{Two column data-matrix containing the transect's spatial coordinates}
 }
 \value{
 Data-frame with spatial coordinates for each specified point on the transect
