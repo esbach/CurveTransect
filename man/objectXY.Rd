@@ -19,3 +19,6 @@ Data-frame with the animal's spatial location as xy coordinates, plus the origin
 \description{
 Location of Detected Objects
 }
+\examples{
+objectXY(transect=transectXY, detections=ds, buffer=5) 
+}

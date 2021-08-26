@@ -17,3 +17,6 @@ Length of the transect (meters) used by distance sampling packages to correctly 
 \description{
 Adjusted Transect Length for Curved Covered Area Calculation
 }
+\examples{
+cca(transect=transect, trunc=100)
+}

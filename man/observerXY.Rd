@@ -17,3 +17,6 @@ Data-frame with spatial coordinates for each specified point on the transect
 \description{
 Equidistant Points on Transect
 }
+\examples{
+observerXY(transect=transectXY, spacing=1)
+}

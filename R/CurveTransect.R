@@ -13,7 +13,7 @@ new_point <- function(p0, p1, di) {
 #' @param transectXY Two column data-matrix containing the transect's spatial coordinates
 #' @param spacing Numeric spacing (in meters) between each point on the transect
 #' @return Data-frame with spatial coordinates for each specified point on the transect
-#' @example
+#' @examples 
 #' observerXY(transect=transectXY, spacing=1)
 #' @export
 observerXY <- function(transect, spacing) {
@@ -48,7 +48,7 @@ observerXY <- function(transect, spacing) {
 #' @param transect GIS file of the transect of class SpatialLines
 #' @param trunc Truncation distance (meters)
 #' @return Length of the transect (meters) used by distance sampling packages to correctly calculate the covered area. 
-#' @example
+#' @examples 
 #' cca(transect=transect, trunc=100)
 #' @export
 cca <- function(transect, trunc) {
@@ -65,7 +65,7 @@ cca <- function(transect, trunc) {
 #' @param detections Data frame with colums 'meter,' 'distance,' and 'angle.'
 #' @param buffer Number of meters around the observer's location used to make bearing on the transect. 
 #' @return Data-frame with the animal's spatial location as xy coordinates, plus the original 'meter', 'distance,' and 'angle.' 
-#' @example 
+#' @examples 
 #' objectXY(transect=transectXY, detections=ds, buffer=5) 
 #' @export
 objectXY <- function(transectXY, detections, buffer){
