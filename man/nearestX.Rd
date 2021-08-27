@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{nearestX}
 \alias{nearestX}
-\title{Nearest Distance between Detected Object and Curving Transect}
+\title{Curving Transect Distance Measurement}
 \usage{
 nearestX(detections, transect)
 }
