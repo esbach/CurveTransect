@@ -9,7 +9,7 @@
 #' 
 #' `objectXY`: provides spatial coordinates for each detected object in a distance sampling survey
 #' 
-#' `cca`: calculates the an adjusted transect length for curved covered area calculations
+#' `adjustedL`: calculates the an adjusted transect length for curved covered area calculations
 #' 
 #' Examples of how to use this package are available at
 #' <https://github.com/esbach/CurveTransect>

@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{objectXY}
 \alias{objectXY}
-\title{Location of Detected Objects}
+\title{Spatial Location of Detected Objects}
 \usage{
 objectXY(transectXY, detections, buffer)
 }
@@ -17,7 +17,7 @@ objectXY(transectXY, detections, buffer)
 Data-frame with the animal's spatial location as xy coordinates, plus the original 'meter', 'distance,' and 'angle.'
 }
 \description{
-Location of Detected Objects
+Spatial Location of Detected Objects
 }
 \examples{
 objectXY(transect=transectXY, detections=ds, buffer=5) 

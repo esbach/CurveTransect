@@ -5,23 +5,22 @@
 \alias{CurveTransect}
 \title{Curving Transect Distance Sampling}
 \description{
-`CurveTransect` facilitates distance sampling on a curving transect.
+\code{CurveTransect} facilitates distance sampling on a curving transect.
 }
 \details{
-`observerXY`: creates points on a transect at specific meter intervals
-`objectXY`: provides spatial coordinates for each detected object in a distance sampling survey
-`cca`: calculates the an adjusted transect length for curved covered area calculations
+\code{observerXY}: creates points on a transect at specific meter intervals
+
+\code{objectXY}: provides spatial coordinates for each detected object in a distance sampling survey
+
+\code{adjustedL}: calculates the an adjusted transect length for curved covered area calculations
 
 Examples of how to use this package are available at
-https://github.com/esbach/CurveTransect.
-
-For help with distance sampling, there is a Google Group
-https://groups.google.com/forum/#!forum/distance-sampling.
+\url{https://github.com/esbach/CurveTransect}
 }
 \references{
 Esbach M.S. and R.K. Patra. In review. Distance Sampling from Curving Transects in Dense Forests.
-  Methods in Ecology and Evolution.
+Methods in Ecology and Evolution.
 }
 \author{
-Michael Esbach <mesbach@princeton.edu>#'
+Michael Esbach \href{mailto:mesbach@princeton.edu}{mesbach@princeton.edu}
 }

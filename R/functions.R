@@ -43,15 +43,16 @@ observerXY <- function(transect, spacing) {
 
 # ---------------------------------------#
 
-#' Adjusted Transect Length for Curved Covered Area Calculation
-#' 
+#' @title Adjusted Transect Length
+#' @description Popular distance sampling packages automatically calculate the area covered in the survey based on a straight line (L x 2w). This function
+#' calculates the the area covered in a curved transects and provides the adjusted length necessary for input into these packages (curved covered area ÷ (2 × w))
 #' @param transect GIS file of the transect of class SpatialLines
 #' @param trunc Truncation distance (meters)
 #' @return Length of the transect (meters) used by distance sampling packages to correctly calculate the covered area. 
 #' @examples 
-#' cca(transect=transect, trunc=100)
+#' adjustedL(transect=transect, trunc=100)
 #' @export
-cca <- function(transect, trunc) {
+adjustedL <- function(transect, trunc) {
   buffer = gBuffer(transect, width = trunc, capStyle = "FLAT")
   area = gArea(buffer, byid=FALSE)
   length = (area)/(2*trunc) / 1000 # meters
@@ -59,8 +60,8 @@ cca <- function(transect, trunc) {
 
 # ---------------------------------------#
 
-#' Location of Detected Objects
-#' 
+#' @title Spatial Location of Detected Objects
+#' @description 
 #' @param transectXY Two column data-matrix containing the transect's spatial coordinates
 #' @param detections Data frame with colums 'meter,' 'distance,' and 'angle.'
 #' @param buffer Number of meters around the observer's location used to make bearing on the transect. 
@@ -115,4 +116,22 @@ animalXY <- function(meter, distance, angle, transectXY, buffer){
       warning("There are meters outside the trail. Check 'meter' column in 'detections.'")
       return(c(0,0))
   }
+}
+
+# ---------------------------------------#
+
+#' Nearest Distance between Detected Object and Curving Transect
+#' 
+#' @param detections Output of "objectXY": data-frame with the animal's spatial location as xy coordinates, which must be labelled: "x.obs", "y.obs"
+#' @param transect GIS file of the transect of class SpatialLines
+#' @return Data-frame with measures of distance (meters) between each detection and the nearest location on the transect
+#' @examples 
+#' distance = nearest.distance(detections = detections, transect = transect)
+#' @export
+nearest.distance <- function(detections, transect) {
+  coordinates(detections) = c("x.obs", "y.obs")
+  distance = data.frame(dist2Line(detections, transect, distfun=distGeo))
+  distance = distance[,1:3]
+  colnames(distance) = c("distance", "x.obs", "y.obs")
+  return(distance)
 }
