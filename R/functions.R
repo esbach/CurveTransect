@@ -119,7 +119,7 @@ animalXY <- function(meter, distance, angle, transectXY, buffer){
 
 # ---------------------------------------#
 
-#' @title Nearest Distance between Detected Object and Curving Transect
+#' @title Curving Transect Distance Measurement
 #' @description This function uses the output of “objectXY” (xy coordinates of each detected object) and a GIS file of the transect to measure the nearest distance between each object and the curved transect. It returns a data-frame of distances (x) that can be used in distance sampling analyses.
 #' @param detections Output of "objectXY": data-frame with the animal's spatial location as xy coordinates, which must be labelled: "x.obs", "y.obs"
 #' @param transect GIS file of the transect of class SpatialLines
