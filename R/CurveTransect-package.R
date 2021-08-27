@@ -12,6 +12,12 @@
 #' @import geosphere
 #' @docType package
 #' @author Michael Esbach <mesbach@@princeton.edu>
+#' @section CurveTransect Functions
+#' 
+#' `observerXY`: creates points on a transect at specific meter intervals
+#' `objectXY`: provides spatial coordinates for each detected object in a distance sampling survey
+#' `cca`: calculates the an adjusted transect length for curved covered area calculations
+#' 
 #' @references
 #'
 #' Esbach M.S. and R.K. Patra. In review. Distance Sampling from Curving Transects in Dense Forests.
