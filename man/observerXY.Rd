@@ -15,7 +15,7 @@ observerXY(transect, spacing)
 Data-frame with spatial coordinates for each specified point on the transect
 }
 \description{
-Equidistant Points on Transect
+This function takes a GIS file of a transect and places a point at every meter (or every x meters depending not the spacing you choose). It returns a data-frame with xy coordinates for each meter.
 }
 \examples{
 observerXY(transect=transectXY, spacing=1)

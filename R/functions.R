@@ -1,15 +1,15 @@
 # ---------------------------------------#
 
-norm_vec <- function(x) sqrt(sum(x^2))
-new_point <- function(p0, p1, di) { 
-  # finds point in distance di from point p0 in direction of point p1
-  v = p1 - p0
-  u = v / norm_vec(v)
-  return (p0 + u * di)
+vector <- function(x) sqrt(sum(x^2))
+point <- function(start, first, dist) { 
+  # finds point at distance from start point in direction of first point
+  v = first - start
+  u = v / vector(v)
+  return (start + u * dist)
 }
 
-#' Equidistant Points on Transect
-#' 
+#' @title Equidistant Points on Transect
+#' @description This function takes a GIS file of a transect and places a point at every meter (or every x meters depending not the spacing you choose). It returns a data-frame with xy coordinates for each meter.
 #' @param transectXY Two column data-matrix containing the transect's spatial coordinates
 #' @param spacing Numeric spacing (in meters) between each point on the transect
 #' @return Data-frame with spatial coordinates for each specified point on the transect
@@ -44,8 +44,7 @@ observerXY <- function(transect, spacing) {
 # ---------------------------------------#
 
 #' @title Adjusted Transect Length
-#' @description Popular distance sampling packages automatically calculate the area covered in the survey based on a straight line (L x 2w). This function
-#' calculates the the area covered in a curved transects and provides the adjusted length necessary for input into these packages (curved covered area ÷ (2 × w))
+#' @description Popular distance sampling packages automatically calculate the area covered in the survey based on a straight line, L x 2w, where L is the length of the transect and w is the truncation distance. This function calculates the the area covered in a curved transect and provides and adjusted transect length: curved covered area ÷ (2 × w). When input into popular distance sampling packages, this adjusted length will give the proper covered area. 
 #' @param transect GIS file of the transect of class SpatialLines
 #' @param trunc Truncation distance (meters)
 #' @return Length of the transect (meters) used by distance sampling packages to correctly calculate the covered area. 
@@ -61,7 +60,7 @@ adjustedL <- function(transect, trunc) {
 # ---------------------------------------#
 
 #' @title Spatial Location of Detected Objects
-#' @description 
+#' @description This function uses the xy coordinates of a transect to locate an observer’s location and calculate their bearing (based on the buffer distance). Using the provided distance (between the observer and the object) and angle, it then spatially locates each detected object. It returns a data frame with xy coordinates for each detection.
 #' @param transectXY Two column data-matrix containing the transect's spatial coordinates
 #' @param detections Data frame with colums 'meter,' 'distance,' and 'angle.'
 #' @param buffer Number of meters around the observer's location used to make bearing on the transect. 
@@ -120,18 +119,18 @@ animalXY <- function(meter, distance, angle, transectXY, buffer){
 
 # ---------------------------------------#
 
-#' Nearest Distance between Detected Object and Curving Transect
-#' 
+#' @title Nearest Distance between Detected Object and Curving Transect
+#' @description This function uses the output of “objectXY” (xy coordinates of each detected object) and a GIS file of the transect to measure the nearest distance between each object and the curved transect. It returns a data-frame of distances (x) that can be used in distance sampling analyses.
 #' @param detections Output of "objectXY": data-frame with the animal's spatial location as xy coordinates, which must be labelled: "x.obs", "y.obs"
 #' @param transect GIS file of the transect of class SpatialLines
 #' @return Data-frame with measures of distance (meters) between each detection and the nearest location on the transect
 #' @examples 
-#' distance = nearest.distance(detections = detections, transect = transect)
+#' nearest.distance(detections = detections, transect = transect)
 #' @export
-nearest.distance <- function(detections, transect) {
+nearestX <- function(detections, transect) {
   coordinates(detections) = c("x.obs", "y.obs")
   distance = data.frame(dist2Line(detections, transect, distfun=distGeo))
-  distance = distance[,1:3]
-  colnames(distance) = c("distance", "x.obs", "y.obs")
+  distance = distance[,1]
+  colnames(distance) = c("distance")
   return(distance)
 }

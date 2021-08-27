@@ -15,8 +15,7 @@ adjustedL(transect, trunc)
 Length of the transect (meters) used by distance sampling packages to correctly calculate the covered area.
 }
 \description{
-Popular distance sampling packages automatically calculate the area covered in the survey based on a straight line (L x 2w). This function
-calculates the the area covered in a curved transects and provides the adjusted length necessary for input into these packages (curved covered area ÷ (2 × w))
+Popular distance sampling packages automatically calculate the area covered in the survey based on a straight line, L x 2w, where L is the length of the transect and w is the truncation distance. This function calculates the the area covered in a curved transect and provides and adjusted transect length: curved covered area ÷ (2 × w). When input into popular distance sampling packages, this adjusted length will give the proper covered area.
 }
 \examples{
 adjustedL(transect=transect, trunc=100)

@@ -12,6 +12,8 @@
 
 \code{objectXY}: provides spatial coordinates for each detected object in a distance sampling survey
 
+\code{nearestX}: measures the shortest distance between each detected object anda curving transect
+
 \code{adjustedL}: calculates the an adjusted transect length for curved covered area calculations
 
 Examples of how to use this package are available at

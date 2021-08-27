@@ -17,7 +17,7 @@ objectXY(transectXY, detections, buffer)
 Data-frame with the animal's spatial location as xy coordinates, plus the original 'meter', 'distance,' and 'angle.'
 }
 \description{
-Spatial Location of Detected Objects
+This function uses the xy coordinates of a transect to locate an observer’s location and calculate their bearing (based on the buffer distance). Using the provided distance (between the observer and the object) and angle, it then spatially locates each detected object. It returns a data frame with xy coordinates for each detection.
 }
 \examples{
 objectXY(transect=transectXY, detections=ds, buffer=5) 
