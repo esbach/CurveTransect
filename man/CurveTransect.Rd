@@ -8,6 +8,10 @@
 `CurveTransect` facilitates distance sampling on a curving transect.
 }
 \details{
+`observerXY`: creates points on a transect at specific meter intervals
+`objectXY`: provides spatial coordinates for each detected object in a distance sampling survey
+`cca`: calculates the an adjusted transect length for curved covered area calculations
+
 Examples of how to use this package are available at
 https://github.com/esbach/CurveTransect.
 
@@ -19,5 +23,5 @@ Esbach M.S. and R.K. Patra. In review. Distance Sampling from Curving Transects 
   Methods in Ecology and Evolution.
 }
 \author{
-Michael Esbach <mesbach@princeton.edu>
+Michael Esbach <mesbach@princeton.edu>#'
 }
