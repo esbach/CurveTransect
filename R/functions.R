@@ -27,7 +27,7 @@ observerXY <- function(transect, spacing) {
     lastPoint = result[1,]
     dist = vector(point - lastPoint)    
     if ( accDist + dist > spacing ) {
-      np = new_point(lastPoint, point, spacing - accDist)
+      np = point(lastPoint, point, spacing - accDist)
       equidistantPoints = rbind(np, equidistantPoints)
       result = rbind(np, result)
       accDist = 0 
