@@ -128,9 +128,9 @@ animalXY <- function(meter, distance, angle, transectXY, buffer){
 #' nearest.distance(detections = detections, transect = transect)
 #' @export
 nearestX <- function(detections, transect) {
-  coordinates(detections) = c("x.obs", "y.obs")
-  distance = data.frame(dist2Line(detections, transect, distfun=distGeo))
-  distance = distance[,1]
+  objects = SpatialPoints(data.frame(detections[,c("x.obs", "y.obs")]))
+  distance = data.frame(dist2Line(objects, transect, distfun=distGeo))
+  distance = data.frame(distance[,1])
   colnames(distance) = c("distance")
   return(distance)
 }
