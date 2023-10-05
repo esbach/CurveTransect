@@ -21,7 +21,7 @@ Examples of how to use this package are available at
 }
 \references{
 Esbach, M. S., & Patra, R. K. (2022). Distance sampling from curving transects in dense tropical forests.
-Biotropica, 54(5), 1182-1189. Test
+Biotropica, 54(5), 1182-1189.
 }
 \author{
 Michael Esbach \href{mailto:michael.s.esbach@gmail.com}{michael.s.esbach@gmail.com}
