@@ -20,7 +20,7 @@
 #' @references
 #'
 #' Esbach, M. S., & Patra, R. K. (2022). Distance sampling from curving transects in dense tropical forests.
-#' Biotropica, 54(5), 1182-1189.
+#' Biotropica, 54(5), 1182-1189. 
 #'
 #' @name CurveTransect
 #' @docType package
