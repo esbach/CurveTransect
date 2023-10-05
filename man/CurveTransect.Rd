@@ -20,9 +20,9 @@ Examples of how to use this package are available at
 \url{https://github.com/esbach/CurveTransect}
 }
 \references{
-Esbach M.S. and R.K. Patra. In review. Distance Sampling from Curving Transects in Dense Forests.
-Methods in Ecology and Evolution.
+Esbach, M. S., & Patra, R. K. (2022). Distance sampling from curving transects in dense tropical forests.
+Biotropica, 54(5), 1182-1189. Test
 }
 \author{
-Michael Esbach \href{mailto:mesbach@princeton.edu}{mesbach@princeton.edu}
+Michael Esbach \href{mailto:michael.s.esbach@gmail.com}{michael.s.esbach@gmail.com}
 }

@@ -11,7 +11,7 @@ Authors@R:
            family = "Patra",
            role = c("aut", "cre"),
            email = "rkumarpatra@gmail.com")
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 Imports: 
     geosphere
 URL: https://github.com/esbach/CurveTransect
