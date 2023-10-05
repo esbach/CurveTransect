@@ -16,12 +16,12 @@
 #' Examples of how to use this package are available at
 #' <https://github.com/esbach/CurveTransect>
 #'
-#' @author Michael Esbach <mesbach@@princeton.edu> 
+#' @author Michael Esbach <michael.s.esbach@gmail.com> 
 #' @references
 #'
-#' Esbach M.S. and R.K. Patra. In review. Distance Sampling from Curving Transects in Dense Forests.
-#'   Methods in Ecology and Evolution.
-#' 
+#' Esbach, M. S., & Patra, R. K. (2022). Distance sampling from curving transects in dense tropical forests.
+#' Biotropica, 54(5), 1182-1189. 
+#'
 #' @name CurveTransect
 #' @docType package
 #' @import geosphere
