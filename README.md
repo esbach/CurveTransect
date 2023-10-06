@@ -46,6 +46,7 @@ library(smoothr) #curve smoothing
 transect = smooth(transect, method="chaikin") # smooth line
 projected = CRS("+proj=utm +zone=17 +ellps=intl +units=m +datum=WGS84 +no_defs") # add a crs
 proj4string(transect) = projected
+plot(transect)
 ```
 
 ### 2: Create Equally Distanced Points on Transect
@@ -56,16 +57,11 @@ library(rgeos) # gLength
 length = round(gLength(transect))
 ```
 
-the functions requires a data-frame with two columns containing the x and y coordinates
-```
-transectXY = data.matrix(transect@lines[[1]]@Lines[[1]]@coords)
-```
-
 use `observerXY` function to place spatial points at every meter on transect. this function requires two inputs: 
-- `transectXY` is a data-frame with the transects x and y coordinates
+- `transectXY` object of class SpatialPointsDataFrame
 - `spacing` is the spacing between each point placed on the transect in meters (e.g., a point at every meter)
 ```
-transectXY = observerXY(transect=transectXY, spacing=1)
+transectXY = observerXY(transect=transect, spacing=1)
 ```
 <img src="https://github.com/esbach/CurveTransect/blob/main/Figures/Points.png" width="500" />
 - note that the spacing in this image was bumped up to every 40 meters in order for visualization purposes
@@ -100,6 +96,7 @@ points(first[1,], col="red", pch=20)
 convert to data frame
 ```
 transectXY = data.frame(transectXY@coords)
+colnames(transectXY) = c("x.obs", "y.obs")
 ```
 
 add meters colunm in proper order
