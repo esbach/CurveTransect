@@ -58,7 +58,7 @@ length = round(gLength(transect))
 ```
 
 use `observerXY` function to place spatial points at every meter on transect. this function requires two inputs: 
-- `transectXY` object of class SpatialPointsDataFrame
+- `transectXY` object of class SpatialLinesDataFrame
 - `spacing` is the spacing between each point placed on the transect in meters (e.g., a point at every meter)
 ```
 transectXY = observerXY(transect=transect, spacing=1)

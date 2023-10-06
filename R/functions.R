@@ -10,11 +10,11 @@ point <- function(start, first, dist) {
 
 #' @title Equidistant Points on Transect
 #' @description This function takes a GIS file of a transect and places a point at every meter (or every x meters depending not the spacing you choose). It returns a data-frame with xy coordinates for each meter.
-#' @param transectXY Two column data-matrix containing the transect's spatial coordinates
+#' @param transect object of class SpatialLinesDataFrame
 #' @param spacing Numeric spacing (in meters) between each point on the transect
 #' @return Data-frame with spatial coordinates for each specified point on the transect
 #' @examples 
-#' observerXY(transect=transectXY, spacing=1)
+#' observerXY(transect=transect, spacing=1)
 #' @export
 observerXY <- function(transect, spacing) {
   transectXY = data.matrix(transect@lines[[1]]@Lines[[1]]@coords)
