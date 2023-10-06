@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/388935013.svg)](https://zenodo.org/badge/latestdoi/388935013)
+
 # `CurveTransect`
 `CurveTransect` facilitates distance sampling on a curving transect. 
 
